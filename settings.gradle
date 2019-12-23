@@ -1,3 +1,6 @@
-include ':presentation'
 rootProject.name='Toki'
-include Modules.app, Modules.navigation, Modules.feature_breed
+include Modules.app,
+        Modules.presentation,
+        Modules.navigation,
+        Modules.network,
+        Modules.feature_breed

@@ -5,14 +5,9 @@ object ApplicationId {
 object Modules {
     val app = ":app"
     val navigation = ":navigation"
+    val presentation = ":presentation"
     val feature_breed = ":feature_breed"
-
-    //val cache = ":common:cache"
-    //val network = ":common:network"
-
-    //val presentation = ":common:presentation"
-
-    //val breedbuild.gradle.kts = ":breed"
+    val network = ":network"
 }
 
 object Releases {
