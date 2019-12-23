@@ -3,10 +3,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 dependencies {
-    ///implementation project(Modules.cache)
-    //implementation project(Modules.network)
+    implementation project(Modules.network)
     implementation project(Modules.navigation)
-    //implementation project(Modules.presentation)
+    implementation project(Modules.presentation)
 
     implementation SupportLibraries.design
     implementation SupportLibraries.cardview
