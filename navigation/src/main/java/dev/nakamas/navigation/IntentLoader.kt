@@ -2,7 +2,7 @@ package dev.nakamas.navigation
 
 import android.content.Intent
 
-private const val PACKAGE_NAME = "com.sanogueralorenzo.namingishard"
+private const val PACKAGE_NAME = "dev.nakamas.toki"
 
 private fun intentTo(className: String): Intent =
     Intent(Intent.ACTION_VIEW).setClassName(PACKAGE_NAME, className)

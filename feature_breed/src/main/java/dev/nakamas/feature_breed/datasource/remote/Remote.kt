@@ -7,11 +7,11 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface BreedsApi {
-
     @GET("breeds/list/all")
-    fun getAllBreedsAsync() : Single<GetAllBreedResponse>
+    fun getAllBreedsAsync(): Single<GetAllBreedResponse>
+}
 
+interface BreedImagesApi {
     @GET("breed/{name}/images")
     fun getBreedImages(@Path("name") name: String): Single<GetBreedImagesResponse>
-
 }

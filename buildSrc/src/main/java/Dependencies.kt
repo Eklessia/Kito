@@ -1,5 +1,5 @@
 object ApplicationId {
-    val id = "com.sanogueralorenzo.namingishard"
+    val id = "dev.nakamas.toki"
 }
 
 object Modules {
@@ -48,6 +48,7 @@ object Versions {
     val glide = "4.9.0"
     val rxpaper = "1.4.0"
     val paperdb = "2.6"
+    val picasso = "2.71828"
     val moshi = "1.8.0"
     val lifecycle = "2.0.0"
     val leakCanary = "2.0-alpha-2"
@@ -81,6 +82,8 @@ object Libraries {
 
     val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+
+    val picasso = "com.squareup.picasso:picasso:${Versions.picasso}"
 
     val paperdb = "io.paperdb:paperdb:${Versions.paperdb}"
     val rxpaper = "com.github.pakoito:RxPaper2:${Versions.rxpaper}"

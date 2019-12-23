@@ -22,6 +22,9 @@ dependencies {
 
     implementation Libraries.moshiConverter
 
+    implementation Libraries.picasso
+
+
     testImplementation TestLibraries.junit
     testImplementation TestLibraries.assertjCore
     testImplementation TestLibraries.mockitoKotlin

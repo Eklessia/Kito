@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
     package="dev.nakamas.feature_breed">
 
     <dist:module
         dist:instant="false"
+        dist:onDemand="true"
         dist:title="@string/title_feature_breed">
-        <dist:delivery>
-            <dist:on-demand />
-        </dist:delivery>
-
         <dist:fusing dist:include="true" />
     </dist:module>
 
-    <application>
-        <activity android:name=".presentation.breedlist.BreedListActivity"></activity>
+    <application tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="dev.nakamas.feature_breed.presentation.breedlist.BreedListActivity"/>
+        <activity android:name="dev.nakamas.feature_breed.presentation.breeddetails.BreedDetailsActivity"/>
     </application>
 
 </manifest>

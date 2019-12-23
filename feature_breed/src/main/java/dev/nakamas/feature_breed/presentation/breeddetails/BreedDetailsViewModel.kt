@@ -17,15 +17,15 @@ import io.reactivex.schedulers.Schedulers
 class BreedDetailsViewModel constructor(private val useCase: GetBreedImagesUseCase) :
     ViewModel() {
 
-    val posts = MutableLiveData<Resource<BreedImagesItem>>()
+    val listImages = MutableLiveData<Resource<BreedImagesItem>>()
     private val compositeDisposable = CompositeDisposable()
 
     fun get(nameBreed: String) =
         compositeDisposable.add(useCase.getBreedImages(nameBreed)
-            .doOnSubscribe { posts.setLoading() }
+            .doOnSubscribe { listImages.setLoading() }
             .subscribeOn(Schedulers.io())
             .map { it.mapToPresentation() }
-            .subscribe({ posts.setSuccess(it) }, { posts.setError(it.message) })
+            .subscribe({ listImages.setSuccess(it) }, { listImages.setError(it.message) })
         )
 
     override fun onCleared() {

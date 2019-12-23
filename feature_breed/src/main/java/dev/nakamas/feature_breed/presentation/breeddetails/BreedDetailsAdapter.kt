@@ -4,9 +4,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import dev.nakamas.feature_breed.R
 import dev.nakamas.presentation.inflate
-import kotlinx.android.synthetic.main.item_list_breeds.view.*
+import kotlinx.android.synthetic.main.item_list_breed_image.view.*
 
 class BreedDetailsAdapter constructor(private val itemClick: (String) -> Unit) :
     ListAdapter<String, BreedDetailsAdapter.ViewHolder>(BreedImageDiffCallback()) {
@@ -14,16 +15,17 @@ class BreedDetailsAdapter constructor(private val itemClick: (String) -> Unit) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(parent)
 
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
         holder.bind(getItem(position))
 
     inner class ViewHolder(parent: ViewGroup) :
-        RecyclerView.ViewHolder(parent.inflate(R.layout.item_list_breeds)) {
+        RecyclerView.ViewHolder(parent.inflate(R.layout.item_list_breed_image)) {
 
-        fun bind(item: String) {
-            itemView.tvNameBreed.text = item
-            itemView.setOnClickListener { itemClick.invoke(item) }
+        fun bind(urlImage: String) {
+            Picasso.get()
+                .load(urlImage)
+                .placeholder(R.drawable.place_holder_image)
+                .into(itemView.ivBreedImage)
         }
     }
 }

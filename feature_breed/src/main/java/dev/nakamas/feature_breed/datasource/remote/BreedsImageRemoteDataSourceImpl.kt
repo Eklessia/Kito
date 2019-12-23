@@ -5,7 +5,7 @@ import dev.nakamas.feature_breed.domain.entity.BreedImages
 import io.reactivex.Single
 
 class BreedsImageRemoteDataSourceImpl constructor(
-    private val api: BreedsApi
+    private val api: BreedImagesApi
 ) : BreedsImagesDataSource {
 
     override fun get(name: String): Single<BreedImages> =

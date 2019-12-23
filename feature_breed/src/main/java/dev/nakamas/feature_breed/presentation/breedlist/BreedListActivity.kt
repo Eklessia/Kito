@@ -7,7 +7,7 @@ import com.google.android.material.snackbar.Snackbar
 import dev.nakamas.feature_breed.R
 import dev.nakamas.feature_breed.di.injectFeature
 import dev.nakamas.feature_breed.presentation.model.BreedsItem
-import dev.nakamas.navigation.TokiNavigation
+import dev.nakamas.navigation.features.TokiNavigation
 import dev.nakamas.presentation.Resource
 import dev.nakamas.presentation.ResourceState
 import dev.nakamas.presentation.startRefreshing
@@ -20,7 +20,7 @@ class BreedListActivity : AppCompatActivity() {
     private val vm: BreedListViewModel by viewModel()
 
     private val itemClick: (String) -> Unit =
-        { startActivity(TokiNavigation.postDetails(userId = it, postId = it)) }
+        { startActivity(TokiNavigation.goToBreedImages(it)) }
     private val adapter = BreedListAdapter(itemClick)
     private val snackBar by lazy {
         Snackbar.make(swipeRefreshLayout, getString(R.string.error), Snackbar.LENGTH_INDEFINITE)
@@ -50,8 +50,12 @@ class BreedListActivity : AppCompatActivity() {
                 ResourceState.SUCCESS -> swipeRefreshLayout.stopRefreshing()
                 ResourceState.ERROR -> swipeRefreshLayout.stopRefreshing()
             }
-            it.data?.let { adapter.submitList(it.breds) }
-            it.message?.let { snackBar.show() }
+            it.data?.let {
+                adapter.submitList(it.breds)
+            }
+            it.message?.let {
+                snackBar.show()
+            }
         }
     }
 }
