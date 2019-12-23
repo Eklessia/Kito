@@ -1,2 +1,2 @@
-include ':app', ':navigation'
 rootProject.name='Toki'
+include Modules.app, Modules.navigation, Modules.feature_breed
