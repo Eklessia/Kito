@@ -13,7 +13,9 @@ import dev.nakamas.feature_breed.domain.repository.BreedRepository
 import dev.nakamas.feature_breed.domain.repository.BreedsImagesRepository
 import dev.nakamas.feature_breed.domain.usecase.GetAllBreedsUseCase
 import dev.nakamas.feature_breed.domain.usecase.GetBreedImagesUseCase
+import dev.nakamas.feature_breed.presentation.breedlist.BreedListViewModel
 import dev.nakamas.network.createNetworkClient
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -23,7 +25,7 @@ fun injectFeature() = loadFeature
 
 private val loadFeature by lazy {
     loadKoinModules(
-        //viewModelModule,
+        viewModelModule,
         useCaseModule,
         repositoryModule,
         dataSourceModule,
@@ -32,7 +34,7 @@ private val loadFeature by lazy {
 }
 
 val viewModelModule: Module = module {
-    //viewModel { PostListViewModel(usersPostsUseCase = get()) }
+    viewModel { BreedListViewModel(useCase = get()) }
     //viewModel { PostDetailsViewModel(userPostUseCase = get(), commentsUseCase = get()) }
 }
 
