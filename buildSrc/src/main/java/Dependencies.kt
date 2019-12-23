@@ -43,6 +43,7 @@ object Versions {
     val timber = "4.7.1"
     val rxjava = "2.2.10"
     val rxkotlin = "2.3.0"
+    val rxAndroidVersion = "2.1.1"
     val retrofit = "2.6.0"
     val loggingInterceptor = "4.0.0"
     val glide = "4.9.0"
@@ -59,21 +60,21 @@ object Versions {
 
     val junit = "4.12"
     val assertjCore = "3.12.2"
-    val mockitoKotlin = "2.1.0"
-    val mockitoInline = "3.0.0"
+
+    val truthVersion = "1.0"
+    val truthExtVersion = "1.3.0-alpha01"
+    val mockKVersion = "1.9.3"
+
+
 }
 
 object Libraries {
     val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
 
     val ktx = "androidx.core:core-ktx:${Versions.ktx}"
-
-    val maps = "com.google.android.gms:play-services-maps:${Versions.maps}"
-
-    val timber = "com.jakewharton.timber:timber:${Versions.timber}"
-
     val rxjava = "io.reactivex.rxjava2:rxjava:${Versions.rxjava}"
     val rxkotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.rxkotlin}"
+    val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroidVersion}"
 
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     val rxjavaAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
@@ -120,7 +121,8 @@ object FirebaseLibraries {
 object TestLibraries {
     val junit = "junit:junit:${Versions.junit}"
     val assertjCore = "org.assertj:assertj-core:${Versions.assertjCore}"
-    val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
-    val mockitoInline = "org.mockito:mockito-inline:${Versions.mockitoInline}"
     val lifecycleTesting = "androidx.arch.core:core-testing:${Versions.lifecycle}"
+    val mockK = "io.mockk:mockk:${Versions.mockKVersion}"
+    val truth =  "com.google.truth:truth:${Versions.truthVersion}"
+    val truthExt = "androidx.test.ext:truth:${Versions.truthExtVersion}"
 }

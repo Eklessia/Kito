@@ -19,6 +19,7 @@ dependencies {
 
     implementation Libraries.rxjava
     implementation Libraries.rxkotlin
+    implementation Libraries.rxAndroid
 
     implementation Libraries.moshiConverter
 
@@ -27,7 +28,8 @@ dependencies {
 
     testImplementation TestLibraries.junit
     testImplementation TestLibraries.assertjCore
-    testImplementation TestLibraries.mockitoKotlin
-    testImplementation TestLibraries.mockitoInline
+    testImplementation TestLibraries.truthExt
+    testImplementation TestLibraries.truth
+    testImplementation TestLibraries.mockK
     testImplementation TestLibraries.lifecycleTesting
 }
